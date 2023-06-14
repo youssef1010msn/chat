@@ -17,7 +17,7 @@ app.use(express.json());
 connectDB();
 
 app.get("/",(req,res)=>{
-    res.send("API is Running");
+    res.send("API Start");
 });
 
 
@@ -37,7 +37,7 @@ const server = app.listen(PORT,()=>{
 const io = require('socket.io')(server,{
     pingTimeout: 60000,
     cors:{
-        origin: "http://localhost:3000",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
